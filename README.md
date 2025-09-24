@@ -112,7 +112,41 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 | TGN 학습              | 트랜스포머 임베딩 + 고객/카드 데이터 | 이상 거래 분류           | 거래 간 시간 정보를 반영한 그래프 구조 구성, 임베딩과 고객/카드 데이터 통합                         |
 | HTGN 학습             | 트랜스포머 임베딩 + 고객/카드 데이터 | 이상 거래 분류           | 고객, 카드, 거래 등 이종 노드를 포함한 그래프 신경망 구성, 임베딩과 속성 데이터를 통합하여 이상 거래 예측 |
 
-
+#### 4.3. 디렉토리 구조
+```
+repo_root/
+│
+├── preprocessing/                  # 데이터 전처리 및 증강
+│   └── ...                         # 단계별 스크립트 포함
+│
+├── Transformer/                    # Transformer 모델
+│   ├── src/                        # 모델 정의 및 학습/추론 코드
+│   ├── data/                       # 실행용 데이터
+│   ├── trained_model/
+│   ├── embedding_result/
+│   ├── npz/
+│   └── scaler_and_encoder/
+│
+├── MLP/                            # MLP 모델
+│   ├── src/
+│   ├── data/
+│   ├── trained_model/
+│   └── results/
+│
+├── TGN/                            # TGN 모델
+│   ├── src/
+│   ├── data/
+│   ├── trained_model/
+│   └── results/
+│
+├── HTGN/                           # HTGN 모델
+│   ├── src/
+│   ├── data/
+│   ├── trained_model/
+│   └── results/
+│
+└── README.md
+```
 
 ### 5. 설치 및 실행 방법
 
@@ -150,3 +184,17 @@ pip install torch torchvision torchaudio --index-url https://download.pytorch.or
 pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.8.0+cu128.html
 pip install torch_geometric
 ```
+
+### 6. 소개 자료 및 시연 영상
+#### 6.1. 프로젝트 소개 자료
+> PPT 등
+#### 6.2. 시연 영상
+> 영상 링크 또는 주요 장면 설명
+
+### 7. 팀 구성
+#### 7.1. 팀원별 소개 및 역할 분담
+>
+#### 7.2. 팀원 별 참여 후기
+> 개별적으로 느낀 점, 협업, 기술적 어려움 극복 사례 등
+
+### 8. 참고 문헌 및 출처
