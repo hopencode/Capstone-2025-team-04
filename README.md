@@ -70,7 +70,7 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 #### 3.2. 사용 기술 및 환경
 ##### 공통 사항
 - **개발 언어**: Python 3.10 이상
-- **개발 환경**: GPU 사용 권장
+- **개발 환경**: GPU 사용 권장 (트랜스포머 및 HTGN 모델 기준 5060ti GPU의 PC에서 개발)
 
 ##### MLP 개발 환경
 - **프레임워크**: PyTorch==2.8.0
@@ -124,7 +124,7 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 
 #### 4.3. 디렉토리 구조
 ```
-repo_root/
+repo/
 │
 ├── data_preprocess_and_augment/    # 데이터 전처리 및 증강
 │   └── data/                       # 원본 및 전처리 결과 저장
