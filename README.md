@@ -127,7 +127,8 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 repo/
 │
 ├── data_preprocess_and_augment/    # 데이터 전처리 및 증강
-│   └── data/                       # 원본 및 전처리 결과 저장
+│   ├── data/                       # 원본 및 전처리 결과 저장
+│   └── requirements.txt
 │
 ├── transformer/                    # 거래 데이터 시계열 정보 처리 Transformer 모델
 │   ├── src/                        # 모델 코드
@@ -135,7 +136,8 @@ repo/
 │   ├── trained_model/
 │   ├── embedding_result/
 │   ├── npz/
-│   └── scaler_and_encoder/
+│   ├── scaler_and_encoder/
+│   └── requirements.txt
 │
 ├── mlp/                            # 이상 거래 탐지 MLP 모델
 │   ├── src/
@@ -155,8 +157,11 @@ repo/
 ├── htgn/                           # 이상 거래 탐지 HTGN 모델
 │   ├── src/
 │   ├── data/
+│   ├── embedding_result/
+│   ├── scaler_and_encoder/
 │   ├── trained_model/
-│   └── results/
+│   ├── npz/
+│   └── requirements.txt
 │
 └── README.md
 ```
