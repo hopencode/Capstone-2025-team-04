@@ -193,6 +193,31 @@ python transformer_transaction_embedding.py
 ```
 
 #### 5.2. MLP 설치 및 실행
+- **가상 환경 생성 및 활성화 (Conda or venv)** 
+```bash
+#Conda
+conda create -n mlp_env python=3.10 
+conda activate mlp_env
+
+#venv
+python -m venv venv
+source venv/bin/activate  # macOS/Linux
+# venv\Scripts\activate  # Windows
+```
+- **주요 라이브러리 설치**
+```bash
+pip install -r requirements.txt
+```
+- **Shell script 전체 파이프라인 실행**
+```bash
+chmod +x run_mlp.sh
+./run_mlp.sh
+```
+- **개별 단계 직접 실행**
+```bash
+python -m src.main --mode train # 모델 학습 및 평가 실행
+python -m src.main --mode analyze # 저장된 결과 분석 및 시각화
+```
 
 #### 5.3. TGN 설치 및 실행
 ```bash
