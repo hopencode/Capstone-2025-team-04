@@ -177,7 +177,7 @@ pip install geopy==2.4.1
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 ```
 
-- 실행
+- **실행**
 ```bash
 # data_preprocess_and_augment 디렉토리
 python 1_transaction_data_fraud_labeling.py
@@ -188,7 +188,7 @@ python 5_merge_location.py
 python 6_clean_client_and_cards.py
 python 7_data_split_train_and_test.py
 
-# transformer 디렉토리
+# transformer/src 디렉토리
 python transformer_transaction_embedding.py
 ```
 
@@ -239,6 +239,11 @@ pip install pyg_lib torch_scatter torch_sparse torch_cluster torch_spline_conv -
 pip install torch_geometric
 ```
 
+- **실행**
+```bash
+python htgn_fraud_detect.py
+```
+
 ### 6. 소개 자료 및 영상
 #### 6.1. 프로젝트 소개 자료
 [프로젝트 소개 자료](https://github.com/pnucse-capstone2025/Capstone-2025-team-04/blob/main/docs/03.%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C/%ED%8C%8004_%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf)
@@ -256,14 +261,23 @@ pip install torch_geometric
 
 
 ### 8. 참고 문헌 및 출처
-TGN 모델은 원 논문 및 공식 구현 코드를 기반으로 하였다.
-```
-@inproceedings{tgn_icml_grl2020,
-    title={Temporal Graph Networks for Deep Learning on Dynamic Graphs},
-    author={Emanuele Rossi and Ben Chamberlain and Fabrizio Frasca and Davide Eynard and Federico 
-    Monti and Michael Bronstein},
-    booktitle={ICML 2020 Workshop on Graph Representation Learning},
-    year={2020}
-}
-```
-GitHub: https://github.com/twitter-research/tgn
+- 트랜스포머
+  [파이토치 트랜스포머 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.Transformer.html)
+
+- TGN
+  TGN 모델은 원 논문 및 공식 구현 코드를 기반으로 하였다.
+  ```
+  @inproceedings{tgn_icml_grl2020,
+      title={Temporal Graph Networks for Deep Learning on Dynamic Graphs},
+      author={Emanuele Rossi and Ben Chamberlain and Fabrizio Frasca and Davide Eynard and Federico 
+      Monti and Michael Bronstein},
+      booktitle={ICML 2020 Workshop on Graph Representation Learning},
+      year={2020}
+  }
+  ```
+  GitHub: https://github.com/twitter-research/tgn
+
+- HTGN
+  이종 그래프 구성을 위한 [PyG 문서](https://pytorch-geometric.readthedocs.io/en/2.6.0/index.html#)
+  - [HeteroData](https://pytorch-geometric.readthedocs.io/en/2.6.0/generated/torch_geometric.data.HeteroData.html#torch_geometric.data.HeteroData)
+  - [HGTConv](https://pytorch-geometric.readthedocs.io/en/2.6.0/generated/torch_geometric.nn.conv.HGTConv.html#torch_geometric.nn.conv.HGTConv)
