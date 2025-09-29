@@ -62,7 +62,7 @@ def preprocess_and_feature_engineer(df, le_mcc=None, le_zip=None, le_region=None
     df['is_weekend'] = df['dayofweek'].isin([5, 6]).astype(int)
     df['is_night'] = ((df['hour'] >= 22) | (df['hour'] <= 6)).astype(int)
 
-    card_features = pd.read_csv("./data/cleaned_cards.csv")
+    card_features = pd.read_csv("../data/cleaned_cards.csv")
 
     df = df.merge(card_features[['id', 'acct_open_date']], left_on='card_id', right_on='id', how='left',
                   suffixes=('', '_acct'))
@@ -352,16 +352,16 @@ if __name__ == "__main__":
 
     # 파일 경로 설정
     file_paths = {
-        'train_data_input': './data/train_transactions_Clean.csv',
-        'test_data_input': './data/test_transactions_Clean.csv',
-        'train_embeddings_output': './embedding_result/transformer_train_embeddings.csv',
-        'test_embeddings_output': './embedding_result/transformer_test_embeddings.csv',
-        'train_meta_output': './embedding_result/transformer_train_window_meta.csv',
-        'test_meta_output': './embedding_result/transformer_test_window_meta.csv',
-        'model_output': './trained_model/transformer_model.pth',
-        'label_encoder_output': './scaler_and_encoder/transformer_label_encoders.pkl',
-        'scalers_output': './scaler_and_encoder/transformer_scalers.pkl',
-        'transformer_test_results_output': './npz/transformer_test_results.npz'
+        'train_data_input': '../data/train_transactions_Clean.csv',
+        'test_data_input': '../data/test_transactions_Clean.csv',
+        'train_embeddings_output': '../embedding_result/transformer_train_embeddings.csv',
+        'test_embeddings_output': '../embedding_result/transformer_test_embeddings.csv',
+        'train_meta_output': '../embedding_result/transformer_train_window_meta.csv',
+        'test_meta_output': '../embedding_result/transformer_test_window_meta.csv',
+        'model_output': '../trained_model/transformer_model.pth',
+        'label_encoder_output': '../scaler_and_encoder/transformer_label_encoders.pkl',
+        'scalers_output': '../scaler_and_encoder/transformer_scalers.pkl',
+        'transformer_test_results_output': '../npz/transformer_test_results.npz'
     }
 
     numerical_feature_cols = [
@@ -579,3 +579,4 @@ if __name__ == "__main__":
     embeddings_test_df.to_csv(file_paths['test_embeddings_output'], index=False)
     window_meta_df_test_full.to_csv(file_paths['test_meta_output'], index=False)
     print(f"[INFO] 테스트용 임베딩 및 메타데이터 저장 완료: {file_paths['test_embeddings_output']}")
+
