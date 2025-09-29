@@ -1,0 +1,14 @@
+﻿colorama==0.4.6
+geographiclib==2.1
+geopy==2.4.1
+joblib==1.5.2
+numpy==1.23.5
+pandas==2.0.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
+scikit-learn==1.2.2
+scipy==1.15.3
+six==1.17.0
+threadpoolctl==3.6.0
+tqdm==4.67.1
+tzdata==2025.2
