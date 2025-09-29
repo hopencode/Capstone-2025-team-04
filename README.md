@@ -81,11 +81,14 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 
 ##### TGN 개발 환경
 - **프레임워크**: PyTorch==2.8.0
-- **그래프 신경망 라이브러리**: PyTorch Geometric
+- **TGN 모델 코드**: [TGN Official Repository](https://github.com/twitter-research/tgn) 에서 클론하여 사용
 - **데이터 처리 라이브러리**
   - Pandas==2.0.2
   - NumPy==1.23.4
   - Scikit-learn==1.2.1
+- **기타 라이브러리**
+  - matplotlib
+  - tqdm
 
 ##### HTGN 개발 환경
 - **프레임워크**: PyTorch==2.8.0
@@ -109,7 +112,7 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 | 추가 전처리            | 증강/언더샘플링 데이터           | 학습/테스트용 데이터 분할  | 상점 좌표 등 추가 피처 결합, 학습/테스트 데이터셋 분리                                        |
 | 트랜스포머 임베딩 생성    | 학습용 거래 시퀀스, 패딩/마스크   | 거래 시퀀스 임베딩        | 시퀀스 내 모든 거래 간 관계 학습, 임베딩 벡터 생성                                           |
 | MLP 학습              | 트랜스포머 임베딩 + 고객/카드 데이터 | 이상 거래 분류           | 단순 신경망 기반 분류, 트랜스포머 임베딩과 고객/카드 정보를 결합하여 이상 거래 예측                     |
-| TGN 학습              | 트랜스포머 임베딩 + 고객/카드 데이터 | 이상 거래 분류           | 거래 간 시간 정보를 반영한 그래프 구조 구성, 임베딩과 고객/카드 데이터 통합                         |
+| TGN 학습              | 트랜스포머 임베딩 + 고객/카드 데이터 | 이상 거래 분류           | 거래 간 시간 정보와 엣지 피처를 반영한 시계열 그래프 구조로 고객·카드의 과거 맥락을 노드 임베딩에 통합                         |
 | HTGN 학습             | 트랜스포머 임베딩 + 고객/카드 데이터 | 이상 거래 분류           | 고객, 카드, 거래 등 이종 노드를 포함한 그래프 신경망 구성, 임베딩과 속성 데이터를 통합하여 이상 거래 예측 |
 
 #### 4.3. 디렉토리 구조
@@ -149,30 +152,45 @@ repo_root/
 ```
 
 ### 5. 설치 및 실행 방법
+- 수집 데이터 링크 [Financial Transactions Dataset: Analytics](https://www.kaggle.com/datasets/computingvictor/transactions-fraud-datasets) 
+  - 데이터 용량 초과로 저장소 업로드 불가로 링크 첨부
 
 #### 5.1. 데이터 전처리 및 Transformer 설치 및 실행
+
 - **주요 라이브러리 설치**
 ```bash
 pip install numpy==1.23.5
 pip install pandas==2.0.3
 pip install scikit-learn==1.2.2
+pip install geopy==2.4.1
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
 ```
 
 - 실행
 ```bash
-python preprocess_labeling.py
-python augment_undersample.py
-python add_coordinates.py
-python join_coordinates.py
-python remove_empty_customers.py
-python train_test_split.py
-python transformer_train.py
+# data_preprocess_and_augment 디렉토리
+python 1_transaction_data_fraud_labeling.py
+python 2_preprocessing_missing_values.py
+python 3_transaction_data_augment.py
+python 4_get_location.py
+python 5_merge_location.py
+python 6_clean_client_and_cards.py
+python 7_data_split_train_and_test.py
+
+# transformer 디렉토리
+python transformer_transaction_embedding.py
 ```
 
 #### 5.2. MLP 설치 및 실행
 
 #### 5.3. TGN 설치 및 실행
+```bash
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+pip install pandas==2.0.2 numpy==1.23.4 scikit-learn==1.2.1
+pip install matplotlib tqdm
+# TGN 원본 저장소 클론
+git clone https://github.com/twitter-research/tgn.git
+```
 
 #### 5.4. HTGN 설치 및 실행
 - **주요 라이브러리 설치**
@@ -194,7 +212,16 @@ pip install torch_geometric
 ### 7. 팀 구성
 #### 7.1. 팀원별 소개 및 역할 분담
 >
-#### 7.2. 팀원 별 참여 후기
-> 개별적으로 느낀 점, 협업, 기술적 어려움 극복 사례 등
 
 ### 8. 참고 문헌 및 출처
+TGN 모델은 원 논문 및 공식 구현 코드를 기반으로 하였다.
+```
+@inproceedings{tgn_icml_grl2020,
+    title={Temporal Graph Networks for Deep Learning on Dynamic Graphs},
+    author={Emanuele Rossi and Ben Chamberlain and Fabrizio Frasca and Davide Eynard and Federico 
+    Monti and Michael Bronstein},
+    booktitle={ICML 2020 Workshop on Graph Representation Learning},
+    year={2020}
+}
+```
+GitHub: https://github.com/twitter-research/tgn
