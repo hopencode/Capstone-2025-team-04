@@ -164,6 +164,7 @@ repo_root/
 ### 5. 설치 및 실행 방법
 - 수집 데이터 링크 [Financial Transactions Dataset: Analytics](https://www.kaggle.com/datasets/computingvictor/transactions-fraud-datasets) 
   - 데이터 용량 초과로 저장소 업로드 불가로 링크 첨부
+  - 이로 인해 저장소에 생성되지 않은 디렉토리가 있으므로 디렉토리 구조 및 코드 상의 입출력 파일 확인 필요
 
 #### 5.1. 데이터 전처리 및 Transformer 설치 및 실행
 
