@@ -1,0 +1,68 @@
+================================================================================
+DETAILED PERFORMANCE METRICS
+================================================================================
+
+1. Classification Report - Enhanced Neural Network:
+--------------------------------------------------
+              precision    recall  f1-score   support
+
+      Normal     0.9920    0.9950    0.9935    132023
+       Fraud     0.9506    0.9234    0.9368     13851
+
+    accuracy                         0.9882    145874
+   macro avg     0.9713    0.9592    0.9651    145874
+weighted avg     0.9881    0.9882    0.9881    145874
+
+
+2. Classification Report - Final Ensemble:
+--------------------------------------------------
+              precision    recall  f1-score   support
+
+      Normal     0.9633    0.9944    0.9786    132023
+       Fraud     0.9223    0.6385    0.7546     13851
+
+    accuracy                         0.9606    145874
+   macro avg     0.9428    0.8164    0.8666    145874
+weighted avg     0.9594    0.9606    0.9573    145874
+
+
+3. Detailed Metrics Comparison:
+--------------------------------------------------
+Model                Class      Precision    Recall       F1-Score    
+--------------------------------------------------
+Enhanced NN          Normal     0.9920       0.9950       0.9935      
+Enhanced NN          Fraud      0.9506       0.9234       0.9368      
+
+Final Ensemble       Normal     0.9633       0.9944       0.9786      
+Final Ensemble       Fraud      0.9223       0.6385       0.7546      
+
+4. AUC Scores:
+--------------------------------------------------
+Enhanced NN AUC: 0.9918
+Final Ensemble AUC: 0.9913
+Stored Test AUC: 0.9918
+Stored Final AUC: 0.9913
+
+5. Dataset Statistics:
+--------------------------------------------------
+Total test samples: 145,874
+Normal transactions: 132,023 (90.50%)
+Fraud transactions: 13,851 (9.50%)
+
+6. Error Analysis:
+--------------------------------------------------
+Enhanced NN:
+  - True Positives:  12,790 (correctly detected fraud)
+  - True Negatives:  131,358 (correctly identified normal)
+  - False Positives: 665 (0.50% of normal)
+  - False Negatives: 1,061 (7.66% of fraud)
+  - Detection Rate:  92.34%
+  - Accuracy:        98.82%
+
+Final Ensemble:
+  - True Positives:  8,844 (correctly detected fraud)
+  - True Negatives:  131,278 (correctly identified normal)
+  - False Positives: 745 (0.56% of normal)
+  - False Negatives: 5,007 (36.15% of fraud)
+  - Detection Rate:  63.85%
+  - Accuracy:        96.06%
