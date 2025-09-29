@@ -102,7 +102,7 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 
 ### 4. 개발 결과
 #### 4.1. 전체 시스템 흐름도
-데이터 플로우 다이어그램
+<img width="431" height="606" alt="Image" src="https://github.com/user-attachments/assets/303d99c5-2bc5-4074-bd28-088f81c05e29" />
 
 #### 4.2. 기능 설명 및 모델별 명세
 | 단계/기능             | 입력                          | 출력                    | 설명                                                                                     |
