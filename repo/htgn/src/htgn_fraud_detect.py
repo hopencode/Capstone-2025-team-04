@@ -356,16 +356,16 @@ class EarlyStopping:
 if __name__ == "__main__":
 
     file_paths = {
-        'train_emb_input': f'./embedding_result/transformer_train_embeddings.csv',
-        'train_meta_input': f'./embedding_result/transformer_train_window_meta.csv',
-        'test_emb_input': f'./embedding_result/transformer_test_embeddings.csv',
-        'test_meta_input': f'./embedding_result/transformer_test_window_meta.csv',
-        'cards_data_input': './data/cards_features_static.csv',
-        'users_data_input': './data/users_features_filtered.csv',
-        'hgt_model_output': f'./trained_model/hgt_model.pth',
-        'encoders_output': f'./scaler_and_encoder/hgt_encoders.pkl',
-        'scalers_output': f'./scaler_and_encoder/hgt_scalers.pkl',
-        'htgn_test_results_output': f'./npz/htgn_test_results.npz'
+        'train_emb_input': f'../embedding_result/transformer_train_embeddings.csv',
+        'train_meta_input': f'../embedding_result/transformer_train_window_meta.csv',
+        'test_emb_input': f'../embedding_result/transformer_test_embeddings.csv',
+        'test_meta_input': f'../embedding_result/transformer_test_window_meta.csv',
+        'cards_data_input': '../data/cards_features_static.csv',
+        'users_data_input': '../data/users_features_filtered.csv',
+        'hgt_model_output': f'../trained_model/hgt_model.pth',
+        'encoders_output': f'../scaler_and_encoder/hgt_encoders.pkl',
+        'scalers_output': f'../scaler_and_encoder/hgt_scalers.pkl',
+        'htgn_test_results_output': f'../npz/htgn_test_results.npz'
     }
     hidden_channel_setting = 160
     num_layers_setting = 4
@@ -566,3 +566,4 @@ if __name__ == "__main__":
         probs=probs
     )
     print(f"[INFO] 테스트 결과(예측 확률 및 실제 레이블) 저장 완료: {file_paths['htgn_test_results_output']}")
+
