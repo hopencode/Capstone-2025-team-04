@@ -122,7 +122,14 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 | TGN 학습              | 트랜스포머 임베딩 (학습용/검증용/테스트용 분할) 각 csv 파일 <br>+ 고객/카드 데이터 각 csv 파일 | 이상 거래 분류 결과 출력        | 거래 간 시간 정보와 엣지 피처를 반영한 시계열 그래프 구조로 고객·카드의 과거 맥락을 노드 임베딩에 통합                         |
 | HTGN 학습             | 트랜스포머 임베딩 (학습용/테스트용 분할) 각 csv 파일 <br>+ 고객/카드 데이터 각 csv 파일 | 이상 거래 분류 결과 출력       | 고객, 카드, 거래 등 이종 노드를 포함한 그래프 신경망 구성, 거래 노드간 엣지를 통해 직접적인 시계열 특성 반영 |
 
-#### 4.3. 디렉토리 구조
+#### 4.3. 모델 성능 결과 비교
+- PR 커브
+<img width="872" height="722" alt="Image" src="https://github.com/user-attachments/assets/47de54c0-e5ea-43ff-8c98-a29927551cb9" />
+
+- Fraud & Macro F1-score 비교
+<img width="1377" height="964" alt="Image" src="https://github.com/user-attachments/assets/d5ad37b1-3494-4b43-ba87-48df701ccce8" />
+
+#### 4.4. 디렉토리 구조
 ```
 repo/
 │
