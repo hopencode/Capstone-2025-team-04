@@ -243,6 +243,7 @@ python -m src.main --mode analyze # 저장된 결과 분석 및 시각화
 ```
 
 #### 5.3. TGN 설치 및 실행
+- **주요 라이브러리 설치**
 ```bash
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install pandas==2.0.2 numpy==1.23.4 scikit-learn==1.2.1
@@ -250,6 +251,13 @@ pip install matplotlib tqdm
 # TGN 원본 저장소 클론
 git clone https://github.com/twitter-research/tgn.git
 ```
+
+- **실행**
+```bash
+# tgn/src 디렉토리 안에서 실행
+python "이상 거래 탐지 TGN 최종 모델.py"
+```
+
 
 #### 5.4. HTGN 설치 및 실행
 - **주요 라이브러리 설치**
