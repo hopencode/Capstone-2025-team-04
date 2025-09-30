@@ -125,6 +125,7 @@ Raw Transaction Data → 데이터 전처리 → 사기 거래 증강 & 정상 �
 #### 4.3. 모델 성능 결과 비교
 - PR 커브
 <img width="872" height="722" alt="Image" src="https://github.com/user-attachments/assets/47de54c0-e5ea-43ff-8c98-a29927551cb9" />
+<br>
 
 - Fraud & Macro F1-score 비교
 <img width="1377" height="964" alt="Image" src="https://github.com/user-attachments/assets/d5ad37b1-3494-4b43-ba87-48df701ccce8" />
