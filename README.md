@@ -183,7 +183,7 @@ repo/
 
 ### 5. 설치 및 실행 방법
 - 수집 데이터 링크 [Financial Transactions Dataset: Analytics](https://www.kaggle.com/datasets/computingvictor/transactions-fraud-datasets) 
-  - 데이터 용량 초과로 저장소 업로드 불가로 링크 첨부
+  - 데이터 용량이 깃허브 업로드 가능 용량을 초과하여 데이터 수집 출처 링크 첨부
   - 이로 인해 저장소에 업로드하지 못한 입출력 파일이 있으므로 디렉토리 구조 및 코드 상의 입출력 파일 확인 필요
 - MLP, TGN은 트랜스포머 임베딩 이후 학습용 임베딩 데이터에 대해 추가로 MLP, TGN 모델 학습을 위한 학습용/검증용 데이터 분리 코드 실행 필요
   - HTGN은 코드 내부에서 입력받은 학습용 임베딩을 학습용/검증용으로 분할해서 활용
