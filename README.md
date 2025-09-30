@@ -279,23 +279,10 @@ python htgn_fraud_detect.py
 
 
 ### 8. 참고 문헌 및 출처
-- 트랜스포머
-  [파이토치 트랜스포머 문서](https://docs.pytorch.org/docs/stable/generated/torch.nn.Transformer.html)
+[1] Al‐dahasi, Ezaz Mohammed, et al. "Optimizing fraud detection in financial transactions with machine learning and imbalance mitigation." Expert Systems 42.2 (2025): e13682.
 
-- TGN
-  TGN 모델은 원 논문 및 공식 구현 코드를 기반으로 하였다.
-  ```
-  @inproceedings{tgn_icml_grl2020,
-      title={Temporal Graph Networks for Deep Learning on Dynamic Graphs},
-      author={Emanuele Rossi and Ben Chamberlain and Fabrizio Frasca and Davide Eynard and Federico 
-      Monti and Michael Bronstein},
-      booktitle={ICML 2020 Workshop on Graph Representation Learning},
-      year={2020}
-  }
-  ```
-  GitHub: https://github.com/twitter-research/tgn
+[2] Vaswani, Ashish, et al. "Attention is all you need." Advances in neural information processing systems 30 (2017).
 
-- HTGN
-  이종 그래프 구성을 위한 [PyG 문서](https://pytorch-geometric.readthedocs.io/en/2.6.0/index.html#)
-  - [HeteroData](https://pytorch-geometric.readthedocs.io/en/2.6.0/generated/torch_geometric.data.HeteroData.html#torch_geometric.data.HeteroData)
-  - [HGTConv](https://pytorch-geometric.readthedocs.io/en/2.6.0/generated/torch_geometric.nn.conv.HGTConv.html#torch_geometric.nn.conv.HGTConv)
+[3] E. Rossi,B. Chamberlain, F. Frasca, D. Eynard, F. Monti, M. Bronstein, “Temporal Graph Networks for Deep Learning on Dynamic Graphs”, ICML 2020 Workshop on Graph Representation Learning , pp. 1, 2020.
+
+[4] E. Rossi. (2020). TGN: Temporal Graph Networks [Online]. Available: https://github.com/twitter-research/tgn (Accessed: Sep. 1, 2025)
